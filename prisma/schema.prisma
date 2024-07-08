@@ -1,0 +1,46 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+    provider             = "mysql"
+    // about this env var, you can add it to .env (without committing) or do `DATABASE_URL=value npx prisma db push`
+    url                  = env("DATABASE_URL")
+    referentialIntegrity = "prisma"
+}
+
+// Reminder: when changing models, need to execute `npx prisma generate` to rebuild the Prisma Client API
+
+model IndividualTravelMap {
+    id               String   @id @default(uuid())
+    userId           String
+    user             User     @relation(fields: [userId], references: [id])
+    visitedCountries Json
+    created          DateTime @default(now())
+}
+
+model CombinedTravelMap {
+    id      String   @id @default(uuid())
+    users   User[]   @relation(references: [id])
+    created DateTime @default(now())
+}
+
+model User {
+    id                  String                @id @default(uuid())
+    auth0Sub            String                @unique
+    email               String?
+    displayName         String
+    pictureUrl          String?
+    created             DateTime              @default(now())
+    onboarded           Boolean               @default(true)
+    individualTravelMap IndividualTravelMap[]
+    combinedTravelMaps  CombinedTravelMap[]   @relation(references: [id])
+}
+
+model TravelMapCounts {
+    id                       String   @id @default(uuid())
+    individualTravelMapCount Int
+    combinedTravelMapCount   Int
+    created                  DateTime @default(now())
+}
