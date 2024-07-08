@@ -1,11 +1,6 @@
 # Travelmap
 
 
-
-**[https://travelmap.guillermodlpa.com](https://travelmap.guillermodlpa.com)** - ⚠️ Site not working because Planetscale discontinued its free Hobby Plan.
-
-Travelmap is a small web application that allows users to make a shareable map of visited countries and combine their maps with other users.
-
 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 
 | Some desktop views           | Some mobile views                    |
