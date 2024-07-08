@@ -1,6 +1,6 @@
 # Travelmap
 
-![End To End Tests badge](https://github.com/guillermodlpa/travelmap/workflows/End%20To%20End%20Tests/badge.svg) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 
 **[https://travelmap.guillermodlpa.com](https://travelmap.guillermodlpa.com)** - ⚠️ Site not working because Planetscale discontinued its free Hobby Plan.
 
